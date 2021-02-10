@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Template 입니다. 
+          Template 입니다. CI/CD 열심히! 
         </a>
       </header>
     </div>
