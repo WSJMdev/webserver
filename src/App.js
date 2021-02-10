@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Template 입니다. CI/CD 학습 열심히배웁시다!!!! 
+          Template 입니다. CI/CD 학습 열심히배웁시다!!!!!!!!!!!!!!!!!!! 
         </a>
       </header>
     </div>
