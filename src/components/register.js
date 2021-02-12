@@ -25,7 +25,11 @@ export default () => {
                 setError(true);
                 throw Error;
             }
-            console.log(process.env.REACT_APP_SERVER_HOST);
+            console.log("보내드리는 json의 구조는 다음과 같습니다. 이 때, password는 암호화되서 전송됩니다~",{
+                email:email,
+                password:sha256(passwd),
+                language:prefer
+            });
             let result = await axios.post(process.env.REACT_APP_SERVER_HOST+"/users",{
                 email:email,
                 password:sha256(passwd),
