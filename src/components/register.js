@@ -25,6 +25,7 @@ export default () => {
                 setError(true);
                 throw Error;
             }
+            console.log(process.env.REACT_APP_SERVER_HOST);
             let result = await axios.post(process.env.REACT_APP_SERVER_HOST+"/users",{
                 email:email,
                 password:sha256(passwd),
