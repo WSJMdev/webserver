@@ -1,0 +1,32 @@
+
+.LoginContainer{
+    width:20rem;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+.LoginButton{
+    width : 100%;
+    margin-bottom: 0.5rem;
+    min-width: 5rem;
+}
+
+.buttonContainer{
+    text-align: center;
+    display: block;
+}
+
+.registerBtn{
+    width : 100%;
+    min-width: 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .LoginContainer{
+        text-align: center;
+        width:90%;
+        font-family: NotoSansKR-Medium;
+    }
+}

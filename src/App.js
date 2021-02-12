@@ -1,23 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import Register from './components/register';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Template 입니다. CI/CD 학습 열심히배웁시다!!!!!!!!!!!!!!!!!!! 
-        </a>
-      </header>
+      <Register />
     </div>
   );
 }
