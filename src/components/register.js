@@ -43,7 +43,7 @@ export default () => {
         }
     }
     return(
-        <div>
+        <div className={style.In}>
             <Form className={style.LoginContainer} onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>이메일 주소</Form.Label>

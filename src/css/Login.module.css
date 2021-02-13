@@ -1,10 +1,12 @@
 
 .LoginContainer{
-    width:20rem;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    width:60%;
+    max-width:20rem;
+    display: inline-block;
+}
+.In{
+    text-align: center;
+    margin: 20rem auto;
 }
 
 .LoginButton{
@@ -28,5 +30,9 @@
         text-align: center;
         width:90%;
         font-family: NotoSansKR-Medium;
+    }
+    .In{
+        text-align: center;
+        margin: 5rem auto;
     }
 }
