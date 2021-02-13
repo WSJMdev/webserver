@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {Form, Button, Modal} from 'react-bootstrap';
+import {FormControl, FormLabel, RadioGroup, FormControlLabel, Radio} from '@material-ui/core';
 import style from '../css/Login.module.css';
 import axios from 'axios';
 import {sha256} from 'js-sha256';
@@ -53,15 +54,15 @@ export default () => {
                     <Form.Label>비밀번호</Form.Label>
                     <Form.Control type="password" placeholder="Password" onChange={handlePasswdChange}/>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>주력 언어</Form.Label>
-                    <Form.Control as="select" onChange={handlePrefer} multiple>
-                        <option value="java">Java</option>
-                        <option value="python">Python</option>
-                        <option value="cplusplus">Cplusplus</option>
-                        <option value="go">Go</option>
-                    </Form.Control>
-                </Form.Group>
+                <FormControl component="fieldset">
+                <FormLabel component="legend">언어</FormLabel>
+                <RadioGroup aria-label="gender" name="gender1" onChange={handlePrefer}>
+                    <FormControlLabel value="java" control={<Radio />} label="Java" />
+                    <FormControlLabel value="python" control={<Radio />} label="Python" />
+                    <FormControlLabel value="cplusplus" control={<Radio />} label="Cplusplus" />
+                    <FormControlLabel value="go" control={<Radio />} label="Go" />
+                </RadioGroup>
+                </FormControl>
                 <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="약관 동의" />
                 </Form.Group>
