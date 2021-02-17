@@ -3,7 +3,9 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY . /app
 RUN npm install
-RUN REACT_APP_SERVER_HOST=http://3.34.215.218:3000 npm run build
+ARG APIHOST
+ENV APIHOST=http://3.34.215.218:3000
+RUN REACT_APP_SERVER_HOST="${APIHOST}" npm run build
 
 FROM nginx:latest
 RUN rm -rf /etc/nginx/conf.d
