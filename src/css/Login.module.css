@@ -25,14 +25,82 @@
     min-width: 5rem;
 }
 
+.CodeArea{
+    width : 100%;
+    font-size: 1.3rem;
+    font-family:NotoSans-SemiBold;
+}
+
+.Ti{
+    font-size: 1.7rem;
+    font-family:NotoSans-Black;
+}
+
+.Tex {
+    font-size: 1.5rem;
+    font-family:NotoSansKR-Bold;
+}
+
 @media only screen and (max-width: 768px) {
     .LoginContainer{
         text-align: center;
         width:90%;
         font-family: NotoSansKR-Medium;
     }
+
     .In{
         text-align: center;
         margin: 5rem auto;
     }
+
+    .CodeArea{
+        width : 100%;
+        font-size: 1rem;
+        font-family:NotoSans-SemiCondensedBold;
+    }
+    
+    .Tex{
+        font-size: 1rem;
+        font-family:NotoSans-Black;
+    }
+}
+
+
+@font-face{
+    font-family:"NotoSans-Black";
+    src:url("../font/NotoSans-hinted/NotoSans-Black.ttf");
+}
+
+@font-face{
+    font-family:"NotoSans-CondensedBold";
+    src:url("../font/NotoSans-hinted/NotoSans-CondensedBold.ttf");
+}
+
+@font-face{
+    font-family:"NotoSans-SemiBold";
+    src:url("../font/NotoSans-hinted/NotoSans-SemiBold.ttf");
+}
+@font-face{
+    font-family:"NotoSans-SemiCondensedBold";
+    src:url("../font/NotoSans-hinted/NotoSans-SemiCondensedBold.ttf");
+}
+
+@font-face{
+    font-family:"NotoSansKR-Black";
+    src:url("../font/NotoSans-hinted/Notosanskr/NotoSansKR-Black.otf");
+}
+
+@font-face{
+    font-family:"NotoSansKR-Bold";
+    src:url("../font/NotoSans-hinted/Notosanskr/NotoSansKR-Bold.otf");
+}
+
+@font-face{
+    font-family:"NotoSans-Regular";
+    src:url("../font/NotoSans-hinted/NotoSans-Regular.ttf");
+}
+
+@font-face{
+    font-family:"NotoSansKR-Medium";
+    src:url("../font/NotoSans-hinted/Notosanskr/NotoSansKR-Medium.otf");
 }

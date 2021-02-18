@@ -5,7 +5,9 @@ COPY . /app
 RUN npm install
 ARG APIHOST
 ENV APIHOST=http://3.34.215.218:3000
-RUN REACT_APP_SERVER_HOST="${APIHOST}" npm run build
+ARG TESTCODE
+ENV TESTCODE=http://ec2-13-209-109-159.ap-northeast-2.compute.amazonaws.com:3001
+RUN REACT_APP_SERVER_HOST="${APIHOST}" REACT_APP_TESTCODE="${TESTCODE}" npm run build
 
 FROM nginx:latest
 RUN rm -rf /etc/nginx/conf.d
