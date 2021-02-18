@@ -91,7 +91,7 @@ export default function CircularIntegration({props}) {
                     dispatch(complete());
                 }, 1000);
             } else {
-                setText(result.data.trim());
+                setText(result.data.toString().trim());
                 setSuccess(false); 
                 setLoading(false);
             }
