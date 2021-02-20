@@ -8,7 +8,6 @@ export default ({props, setTest}) => {
     const formal = props.formal;
     const number = props.number;
     const textArea  = useRef();
-    const cursorPosition = 0;
     const [code, setCode] = useState(formal);
     const handleCode = (e) => {
         setCode(e.target.value);

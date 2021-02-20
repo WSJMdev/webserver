@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Register from './register.js';
+
   const useStyles = makeStyles((theme) => ({
     root: {
       height: '100vh',
@@ -37,7 +38,8 @@ import Register from './register.js';
   
   export default () => {
     const classes = useStyles();
-  
+    const Login = () => {
+    }
     return (
       <Grid container component="main" className={classes.root}>
         <CssBaseline />

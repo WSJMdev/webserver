@@ -7,7 +7,7 @@ import {sha256} from 'js-sha256';
 import {useDispatch, useSelector} from 'react-redux';
 import {login, logout} from '../store/state/login.js';
 import ProblemWrapper from './problem/problemWrapper.js';
-import {javaformal}   from './problem/problemSet.js';
+import {javaformal, pythonformal }   from './problem/problemSet.js';
 export default () => {
     const dispatch = useDispatch();
     const [passwd, setPasswd] = useState("");
@@ -26,6 +26,7 @@ export default () => {
     }
 
     const handlePrefer = (e) => {
+        setTest(false);
         setPrefer(e.target.value);
     }
 
@@ -33,7 +34,7 @@ export default () => {
         event.preventDefault();
         console.log(testr);
         if(testr != 2){
-            if(prefer == "java") setTest(true);
+            setTest(true);
         }
         else {
             try{
@@ -63,20 +64,29 @@ export default () => {
 
     const Problem = () => {
         switch (prefer) {
-            case "java" :
-                if(testr == 0)
-                    return (
-                        <ProblemWrapper props={{number:testr,formal:javaformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
-                    );
-                else if(testr == 1){
-                    return (
-                        <ProblemWrapper props={{number:testr, formal:javaformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
-                    );
-                }
-            case "python":
+            case "java":
+            if(testr == 0){
                 return (
-                    <div>아직 언어 지원안함</div>
+                    <ProblemWrapper props={{number:testr,formal:javaformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
                 );
+            }
+            else if(testr == 1){
+                return (
+                    <ProblemWrapper props={{number:testr, formal:javaformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
+                );
+            }
+            break;
+            case "python" :
+            if(testr == 0)
+                return (
+                    <ProblemWrapper props={{number:testr + 2, formal:pythonformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
+                );
+            else if(testr == 1){
+                return (
+                    <ProblemWrapper props={{number:testr + 2, formal:pythonformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
+                );
+            }
+            break;
             case "cplusplus":
                 return (
                     <div>아직 언어 지원안함</div>
@@ -85,11 +95,10 @@ export default () => {
                 return (
                     <p>아직 언어 지원안함</p>
                 );
-            default :
-                return (
-                    <div></div>
-                );
         }
+        return (
+            <div></div>
+        );
     }
 
     return(
