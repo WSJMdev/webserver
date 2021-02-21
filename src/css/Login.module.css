@@ -31,6 +31,15 @@
     font-family:NotoSans-SemiBold;
 }
 
+.CodeArea2{
+    width : 100%;
+    font-size: 1rem;
+    font-family:NotoSans-Regular;
+    border: 1px dotted;
+    background-color: #eee;  /* 75% 불투명도 */
+}
+
+
 .Ti{
     font-size: 1.7rem;
     font-family:NotoSans-Black;
@@ -103,4 +112,9 @@
 @font-face{
     font-family:"NotoSansKR-Medium";
     src:url("../font/NotoSans-hinted/Notosanskr/NotoSansKR-Medium.otf");
+}
+
+@font-face{
+    font-family:"NotoSans-Regular";
+    src:url("../font/NotoSans-hinted/NotoSans-Regular.ttf");
 }

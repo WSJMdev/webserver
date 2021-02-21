@@ -34,6 +34,8 @@ export default ({func}) => {
         setPassword(e.target.value);
     }
     const handleSubmit = async (event) => {
+        dispatch(login());
+        /*
         try{
             console.log({
                 email : email,
@@ -48,7 +50,7 @@ export default ({func}) => {
             }
         } catch(e) {
             console.log("로그인 실패");
-        }
+        }*/
     }
 
 

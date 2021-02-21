@@ -47,7 +47,7 @@ export default ({props, setTest}) => {
                 <br />
                 <TextareaAutosize className={style.CodeArea} aria-label="minimum height" rowsMin={3} 
                 defaultValue={formal} onKeyDown={handleKeyDown} onChange={handleCode}
-                ref={textArea} value={code}/>
+                ref={textArea} value={code} style={{fontSize:'1rem'}}/>
                 <CircularIntegration props={{number:number, code:code, prefer:props.prefer, num:props.number}}/>
             </Modal.Body>
         </Modal>

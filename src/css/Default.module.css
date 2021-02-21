@@ -1,0 +1,43 @@
+
+.App{
+    font-family: NotoSansKR-Medium;
+}
+
+@font-face{
+    font-family:"NotoSans-Black";
+    src:url("../font/NotoSans-hinted/NotoSans-Black.ttf");
+}
+
+@font-face{
+    font-family:"NotoSans-CondensedBold";
+    src:url("../font/NotoSans-hinted/NotoSans-CondensedBold.ttf");
+}
+
+@font-face{
+    font-family:"NotoSans-SemiBold";
+    src:url("../font/NotoSans-hinted/NotoSans-SemiBold.ttf");
+}
+@font-face{
+    font-family:"NotoSans-SemiCondensedBold";
+    src:url("../font/NotoSans-hinted/NotoSans-SemiCondensedBold.ttf");
+}
+
+@font-face{
+    font-family:"NotoSansKR-Black";
+    src:url("../font/NotoSans-hinted/Notosanskr/NotoSansKR-Black.otf");
+}
+
+@font-face{
+    font-family:"NotoSansKR-Bold";
+    src:url("../font/NotoSans-hinted/Notosanskr/NotoSansKR-Bold.otf");
+}
+
+@font-face{
+    font-family:"NotoSans-Regular";
+    src:url("../font/NotoSans-hinted/NotoSans-Regular.ttf");
+}
+
+@font-face{
+    font-family:"NotoSansKR-Medium";
+    src:url("../font/NotoSans-hinted/Notosanskr/NotoSansKR-Medium.otf");
+}
