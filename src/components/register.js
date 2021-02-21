@@ -7,7 +7,7 @@ import {sha256} from 'js-sha256';
 import {useDispatch, useSelector} from 'react-redux';
 import {login, logout} from '../store/state/login.js';
 import ProblemWrapper from './problem/problemWrapper.js';
-import {javaformal, pythonformal }   from './problem/problemSet.js';
+import {javaformal, pythonformal, cplusformal }   from './problem/problemSet.js';
 export default () => {
     const dispatch = useDispatch();
     const [passwd, setPasswd] = useState("");
@@ -88,9 +88,15 @@ export default () => {
             }
             break;
             case "cplusplus":
+            if(testr == 0)
+            return (
+                <ProblemWrapper props={{number:testr + 4, formal:cplusformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
+            );
+            else if(testr == 1){
                 return (
-                    <div>아직 언어 지원안함</div>
+                    <ProblemWrapper props={{number:testr + 4, formal:cplusformal, test:test, testr:testr, prefer:prefer}} setTest={setTest} />
                 );
+            }
             case "go":
                 return (
                     <p>아직 언어 지원안함</p>

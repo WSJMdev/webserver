@@ -26,8 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
-function Media({props}) {
+function Media({props, func}) {
   const { loading = false } = props;
   const classes = useStyles();
   console.log(props);
@@ -46,7 +45,7 @@ function Media({props}) {
         }
         action={
           loading ? null : (
-            <IconButton aria-label="settings">
+            <IconButton aria-label="settings" onClick={func}>
               <SubscriptionsIcon style={{ color: green[500] }}/>
             </IconButton>
           )
@@ -81,19 +80,31 @@ Media.propTypes = {
 };
 
 export default function Facebook() {
+  const handleGo = () => {
+     window.location.href = 'https://go-tour-ko.appspot.com/welcome/1';
+  }
+  const handleJava = () => {
+    window.location.href = 'https://docs.oracle.com/en/java/javase/15/docs/api/index.html';
+ }
+ const handleVue = () => {
+  window.location.href = 'https://kr.vuejs.org/v2/guide/index.html';
+}
+const handleReact = () => {
+  window.location.href = 'https://ko.reactjs.org/tutorial/tutorial.html';
+}
   return (
     <Grid container>
         <Grid item md={4}>
-            <Media props={tileData[0]}/>
+            <Media props={tileData[0]} func={handleGo}/>
         </Grid>
         <Grid item md={4}>
-            <Media props={tileData[1]}/>
+            <Media props={tileData[1]} func={handleJava}/>
         </Grid>
         <Grid item md={4}>
-            <Media props={tileData[2]}/>
+            <Media props={tileData[2]} func={handleVue}/>
         </Grid>
         <Grid item md={4}>
-            <Media props={tileData[3]}/>
+            <Media props={tileData[3]}  func={handleReact}/>
         </Grid>
     </Grid>
   );

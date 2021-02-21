@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { classnames, DataGrid } from '@material-ui/data-grid';
+import { classnames, DataGrid, stringNumberComparer } from '@material-ui/data-grid';
 import Question from './question.js';
 import { makeStyles } from '@material-ui/core/styles';
 const columns = [
@@ -29,9 +29,7 @@ const rows = [
   { id: 1, 글이름: 'Java 질문입니다.', 작성자: 'mize159', 작성일:"2015",조회: 35 }
 ]
 const example=[{
-    detailed:`이 코드가 왜 안될까요...
-분명히 abcd 출력하는 방법 책 대로 따라했는데, 출력이 안됩니다. 
-아무리 봐도 뭐가 잘못인지 모르겠습니다.`,
+    detailed:"이 코드가 왜 안될까요... \n 분명히 abcd 출력하는 방법 책 대로 따라했는데, 출력이 안됩니다.  아무리 봐도 뭐가 잘못인지 모르겠습니다.",
     pos:"",
     formal:"public class Test {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println('abcd');\n\t}\n}",
     language:"java"

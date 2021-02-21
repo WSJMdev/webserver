@@ -77,7 +77,7 @@ export default function ScrollableTabsButtonForce() {
         >
           <Tab label="질문" icon={<QuestionAnswerIcon />} {...a11yProps(0)} />
           <Tab label="학습" icon={<FavoriteIcon />} {...a11yProps(1)} />
-          <Tab label="프로젝트" icon={<PersonPinIcon />} {...a11yProps(2)} />
+          <Tab label="자유" icon={<PersonPinIcon />} {...a11yProps(2)} />
           <Tab label="스터디" icon={<HelpIcon />} {...a11yProps(3)} />
           <Tab label="포스트작성" icon={<PostAddIcon />} {...a11yProps(4)} />
         </Tabs>

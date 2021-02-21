@@ -7,7 +7,7 @@
     author: '서왕규',
     views: '130 M views',
     createdAt: '10 months ago',
-    detailed: 'Go를 기초부터 시작하여, 병렬성까지 학습합니다.'
+    detailed: 'Go를 기초부터 시작하여, 병렬성까지 학습합니다.',
   },
   {
     src: process.env.REACT_APP_HOST + "studyImage/java.png",

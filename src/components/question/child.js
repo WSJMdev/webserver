@@ -34,7 +34,10 @@ export default ({props}) => {
     const Context = () => {
         const childlist =  props.context.map(elem =>
             <Typography style={{textAlign:'left', width:'100%'}}>
-                {elem.detailed}
+                {elem.detailed.split('\n').map((line)=> {
+                return  <Typography>
+                    {line}</Typography>
+                    })}
                 <CodeWrapper props={{number:0, formal:elem.formal, prefer:elem.language, num:0}}/>
             </Typography>
         );

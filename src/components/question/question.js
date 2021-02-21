@@ -12,11 +12,11 @@ import Child from './child.js';
 import style from '../../css/Default.module.css';
 //Test cases
 const example=[{
-    detailed:"자바에서 String과 char의 구분이 엄격합니다.",
+    detailed:"자바에서 String과 char의 구분이 엄격합니다.\n 자바는 파이썬과는 다르게 타입에 대한 제약이 강합니다.",
     formal:'public class Test {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("abcd");\n\t}\n}',
     language:"java",
 },{
-    detailed:"그래서 String으로 정확히 해주셔야 합니다.",
+    detailed:`보시다시피, string 리터럴을 나타내는 ""를 사용해 주셔야 합니다.\n String으로 정확히 해주셔야 합니다.`,
     formal:'public class Test {\n\tpublic static void main(String[] args) {\n\t\tString a = "abcd";\n\t\tSystem.out.println(a);\n\t}\n}',
     language:"java",
 },
@@ -58,8 +58,11 @@ export default function RecipeReviewCard({props}) {
   };
   const Context = () => {
     const childlist =  props.context.map(elem =>
-        <Typography variant="body2" color="textSecondary" component="p" style={{textAlign:'left', fontSize:'1.2rem', paddingTop:'2rem'}}>
-            <pre>{elem.detailed}</pre>
+        <Typography variant="body1" color="textPrimary" style={{textAlign:'left', fontSize:'1.2rem', paddingTop:'2rem', overflow:'revert'}}>
+            {elem.detailed.split('\n').map((line)=> {
+              return  <Typography variant="body1" color="textPrimary" style={{textAlign:'left', fontSize:'1.2rem'}}>
+                {line}</Typography>
+            })}
             <CodeWrapper props={{number:0, formal:elem.formal, prefer:elem.language, num:0}}/>
         </Typography>
     );
