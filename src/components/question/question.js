@@ -19,11 +19,7 @@ const example=[{
     detailed:`보시다시피, string 리터럴을 나타내는 ""를 사용해 주셔야 합니다.\n String으로 정확히 해주셔야 합니다.`,
     formal:'public class Test {\n\tpublic static void main(String[] args) {\n\t\tString a = "abcd";\n\t\tSystem.out.println(a);\n\t}\n}',
     language:"java",
-},
-
-
-
-];
+}];
 
 // Styles
 const useStyles = makeStyles((theme) => ({

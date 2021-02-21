@@ -1,17 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles, Card, CardHeader, CardContent, CardMedia, Avatar, Typography, Grid} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import Skeleton from '@material-ui/lab/Skeleton';
 import tileData from './tileData.js';
-import {Grid} from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
@@ -80,18 +73,29 @@ Media.propTypes = {
 };
 
 export default function Facebook() {
+  const [items, setItems] = useState(false);
+  const Items = () => {
+    const list = items.map((item)=>{
+      return item;
+    });
+    return list;
+  }
+
+
+
+
   const handleGo = () => {
-     window.location.href = 'https://go-tour-ko.appspot.com/welcome/1';
+    window.location.href = 'https://go-tour-ko.appspot.com/welcome/1';
   }
   const handleJava = () => {
     window.location.href = 'https://docs.oracle.com/en/java/javase/15/docs/api/index.html';
- }
- const handleVue = () => {
-  window.location.href = 'https://kr.vuejs.org/v2/guide/index.html';
-}
-const handleReact = () => {
-  window.location.href = 'https://ko.reactjs.org/tutorial/tutorial.html';
-}
+  }
+  const handleVue = () => {
+    window.location.href = 'https://kr.vuejs.org/v2/guide/index.html';
+  }
+  const handleReact = () => {
+    window.location.href = 'https://ko.reactjs.org/tutorial/tutorial.html';
+  }
   return (
     <Grid container>
         <Grid item md={4}>

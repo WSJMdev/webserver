@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-import { classnames, DataGrid, stringNumberComparer } from '@material-ui/data-grid';
+import { DataGrid } from '@material-ui/data-grid';
 import Question from './question.js';
-import { makeStyles } from '@material-ui/core/styles';
-const columns = [
+import { makeStyles, TextField } from '@material-ui/core';
+import Chip from '../search/chip.js';
+let columns = [
   { field: 'id', headerName: 'id', width: 80 },
   { field: '글이름', headerName: '글이름', width: 400 },
-  { field: '작성자', headerName: '작성자', width: 160 },
+  { field: '작성자', headerName: '작성자', width: 200 },
   {
     field: '작성일',
     headerName: '작성일',
-    width: 170,
+    width: 200,
   },
   {
     field: '조회',
@@ -17,7 +18,26 @@ const columns = [
     width: 100,
   }
 ];
+const windowsz = window.innerWidth / 8;
+if(window.innerWidth < 600){
+    columns = [
+        { field: 'id', headerName: 'id', width: 20 },
+        { field: '글이름', headerName: '글이름', width: 145 },
+        { field: '작성자', headerName: '작성자', width: 100 },
+        {
+          field: '작성일',
+          headerName: '작성일',
+          width: 100,
+        },
+        {
+          field: '조회',
+          headerName: '조회',
+          width: 100,
+        }
+    ];
+}
 
+console.log(windowsz);
 const useStyles = makeStyles((theme) => ({
     root : {
         height: '90vh', 
@@ -41,9 +61,22 @@ export default function DataTable() {
         console.log(e.row.id);
         setReading(e.row.id);
     }
+    //검색어 필터 서비스
+    const isRight = (w) => {
+        let flag = true;
+        let chipData=[];
+        for (var elem of chipData){
+            if(!w.label.includes(elem)){
+                flag = false;
+            }
+        }
+        return flag
+    }
+
     if(reading==""){
         return (
             <div className={classes.root}>
+                <Chip />
                 <DataGrid rows={rows} columns={columns} pageSize={15} autowidth={true} autoHeight={true} onCellClick={handleClick} hideFooterSelectedRowCount={true}/>
             </div>
         );

@@ -17,9 +17,9 @@ export const userSlice = createSlice({
             state.testr = state.testr + 1;
         }
     },
-
-
 });
+
+
 const { actions, reducer } = userSlice;
 export const {login, logout, complete} = actions;
 

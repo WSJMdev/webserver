@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '1ch',
         height: '6ch'
     }
-  }));
+}));
 
 export default ({func}) => {
     const dispatch = useDispatch();
@@ -35,7 +35,7 @@ export default ({func}) => {
     }
     const handleSubmit = async (event) => {
         dispatch(login());
-        /*
+        /* After backend created, use this statements.
         try{
             console.log({
                 email : email,

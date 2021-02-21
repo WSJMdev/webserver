@@ -1,17 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles, CircularProgress, Chip, Button, Fab,  } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
-import Chip from '@material-ui/core/Chip';
-import Button from '@material-ui/core/Button';
-import Fab from '@material-ui/core/Fab';
 import CheckIcon from '@material-ui/icons/Check';
 import SaveIcon from '@material-ui/icons/Save';
 import axios from 'axios';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {complete} from '../../store/state/login.js';
 import FaceIcon from '@material-ui/icons/Face';
+//style
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -49,11 +46,9 @@ export default function CircularIntegration({props}) {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const dispatch = useDispatch();
-  const testr = useSelector(state => state.user.testr);
   const timer = React.useRef();
   const [text, setText] = React.useState("");
   const [color, setColor] = React.useState("secondary");
-  const number = props.number;
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,
   });
@@ -108,8 +103,9 @@ export default function CircularIntegration({props}) {
   };
 
   const handleDelete = () => {
-    console.log("니가 틀리고 끄려고 하지마!");
+    setText("");
   }
+
   return (
     <div className={classes.root} >
       <div className={classes.wrapper}>
