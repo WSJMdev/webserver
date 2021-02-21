@@ -6,7 +6,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import DataTable from "../question/board.js";
-
+import EducationTable from '../educate/education.js';
+import Hidden from '@material-ui/core/Hidden';
+import AppBar from '@material-ui/core/AppBar';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -49,10 +51,14 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    minWidth:'7rem'
   },
   panel:{
       width:'70rem',
       height:'100%'
+  },
+  tabsm:{
+    height:'2rem'
   }
 
 }));
@@ -69,35 +75,35 @@ export default function VerticalTabs() {
 
   return (
         <div className={classes.root}>
-        <Tabs
-            orientation="vertical"
-            variant="scrollable"
-            value={value}
-            onChange={handleChange}
-            aria-label="Vertical tabs example"
-            className={classes.tabs}
-        >
-            <Tab label="질문하기" {...a11yProps(0)} />
-            <Tab label="학습하기" {...a11yProps(1)} />
-            <Tab label="프로젝트" {...a11yProps(2)} />
-            <Tab label="스터디" {...a11yProps(3)} />
-            <Tab label="포스트 작성" {...a11yProps(4)} />
-        </Tabs>
-            <TabPanel className={classes.panel} value={value} index={0}>
-                <DataTable />
-            </TabPanel>
-            <TabPanel className={classes.panel} value={value} index={1}>
-                <DataTable />
-            </TabPanel>
-            <TabPanel className={classes.panel} value={value} index={2}>
-                <DataTable />
-            </TabPanel>
-            <TabPanel className={classes.panel} value={value} index={3}>
-                <DataTable />
-            </TabPanel>
-            <TabPanel className={classes.panel} value={value} index={4}>
-                <DataTable />
-            </TabPanel>
+          <Tabs
+              orientation="vertical"
+              variant="scrollable"
+              value={value}
+              onChange={handleChange}
+              aria-label="Vertical tabs example"
+              className={classes.tabs}
+          >
+              <Tab label="질문하기" {...a11yProps(0)} />
+              <Tab label="학습하기" {...a11yProps(1)} />
+              <Tab label="프로젝트" {...a11yProps(2)} />
+              <Tab label="스터디" {...a11yProps(3)} />
+              <Tab label="포스트 작성" {...a11yProps(4)} />
+          </Tabs>
+          <TabPanel className={classes.panel} value={value} index={0}>
+              <DataTable />
+          </TabPanel>
+          <TabPanel className={classes.panel} value={value} index={1}>
+              <EducationTable />
+          </TabPanel>
+          <TabPanel className={classes.panel} value={value} index={2}>
+              <DataTable />
+          </TabPanel>
+          <TabPanel className={classes.panel} value={value} index={3}>
+              <DataTable />
+          </TabPanel>
+          <TabPanel className={classes.panel} value={value} index={4}>
+              <DataTable />
+          </TabPanel>
         </div>
   );
 }
