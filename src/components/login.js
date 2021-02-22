@@ -34,8 +34,6 @@ export default ({func}) => {
         setPassword(e.target.value);
     }
     const handleSubmit = async (event) => {
-        dispatch(login());
-        /* After backend created, use this statements.
         try{
             console.log({
                 email : email,
@@ -46,11 +44,12 @@ export default ({func}) => {
                 password : sha256(password)
             });
             if(result.status === 200){
+                console.log(result.token);
                 dispatch(login(result.token));
             }
         } catch(e) {
             console.log("로그인 실패");
-        }*/
+        }
     }
 
 

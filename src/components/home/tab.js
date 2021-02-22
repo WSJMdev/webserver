@@ -85,11 +85,11 @@ export default function VerticalTabs() {
               aria-label="Vertical tabs example"
               className={classes.tabs}
           >
-              <Tab label="질문하기" {...a11yProps(0)} />
-              <Tab label="학습하기" {...a11yProps(1)} />
-              <Tab label="프로젝트" {...a11yProps(2)} />
-              <Tab label="스터디" {...a11yProps(3)} />
-              <Tab label="포스트 작성" {...a11yProps(4)} />
+              <Tab label="Question" {...a11yProps(0)} />
+              <Tab label="POST" {...a11yProps(1)} />
+              <Tab label="Project" {...a11yProps(2)} />
+              <Tab label="Group" {...a11yProps(3)} />
+              <Tab label="Publish" {...a11yProps(4)} />
           </Tabs>
           <TabPanel className={classes.panel} value={value} index={0}>
               <DataTable />

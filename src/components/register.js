@@ -56,6 +56,7 @@ export default () => {
                 })
                 //회원가입이 잘되면, 자동로그인(토큰을 받는다.)
                 if(result.status === 201){
+                    console.log(result);
                     dispatch(login(result));
                 }
             } catch(e){
