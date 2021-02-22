@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 400,
     flexGrow: 1,
-    background: '#B4E5FF',
+    background: '#EFF8FB',
   },
 });
 

@@ -42,7 +42,8 @@
     width : 100%;
     font-size: 1rem;
     font-family:NotoSans-Regular;
-    border: 1px dotted;
+    border: none;
+    padding: 0.5rem;
     background-color: #FFFACD;  /* 75% 불투명도 */
 }
 .code{

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     header : {
         minHeight:'5vh',
-        background: '#B4E5FF',
+        background: '#EFF8FB',
         alignItems:'center'
     },
     headerin : {
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
     footer : {
         minHeight:'5vh',
-        background: '#B4E5FF',
+        background: '#EFF8FB',
         alignItems:'center',
         textAlign:'right'
     },
@@ -59,7 +59,7 @@ export default() => {
         <div className={classes.root}>
             <Grid container className={classes.header} >
                 <Grid item xs={12}>
-                <TextField className={classes.headerin} required label="포스트 제목" defaultValue="제목" />
+                <TextField className={classes.headerin} required label="포스트 제목" defaultValue="" />
                 </Grid>
             </Grid>
             <Grid container className={classes.paper} direction="row">
