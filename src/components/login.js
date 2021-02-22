@@ -78,7 +78,7 @@ export default ({func}) => {
                 <TextField
             required
             id="outlined-required"
-            label="Required"
+            label="Password"
             defaultValue=""
             variant="outlined"
             alignItems="center"

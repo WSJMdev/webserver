@@ -9,7 +9,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CodeWrapper from '../code/codeWrapper.js';
 import Child from './child.js';
-import style from '../../css/Default.module.css';
 //Test cases
 const example=[{
     detailed:"자바에서 String과 char의 구분이 엄격합니다.\n 자바는 파이썬과는 다르게 타입에 대한 제약이 강합니다.",
