@@ -6,10 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import userSlice from './store/state/login.js';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
-
+import menuSlice from './components/home/menuSlice.js';
 
 const reducer = combineReducers({
-  user: userSlice
+  user: userSlice,
+  menu : menuSlice
 });
 
 const store = createStore(reducer);

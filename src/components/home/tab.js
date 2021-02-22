@@ -7,11 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import DataTable from "../question/board.js";
 import EducationTable from '../educate/education.js';
-import Hidden from '@material-ui/core/Hidden';
-import AppBar from '@material-ui/core/AppBar';
+import {useDispatch} from 'react-redux';
+import {change} from './menuSlice.js';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -66,9 +65,12 @@ const useStyles = makeStyles((theme) => ({
 export default function VerticalTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const dispatch = useDispatch();
 
   const handleChange = (event, newValue) => {
-      console.log(value);
+    if(newValue == 4){
+      dispatch(change(1));
+    }
     setValue(newValue);
     console.log(value);
   };
