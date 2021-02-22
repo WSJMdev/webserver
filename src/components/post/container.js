@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Grid, Paper, IconButton,TextField} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
 import CodeWrapper from './postCode.js';
 import Stepper from './stepper.js';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import EditorConvertToHTML from './editor.js';
+
 const useStyles = makeStyles((theme) => ({
     root : {
         height: '100vh',
@@ -20,9 +23,13 @@ const useStyles = makeStyles((theme) => ({
     header : {
         minHeight:'5vh',
         background: '#B4E5FF',
-        textAlign:'center',
         alignItems:'center'
     },
+    headerin : {
+        width:'40%',
+        marginLeft:'2rem'
+    },
+
     footer : {
         minHeight:'5vh',
         background: '#B4E5FF',
@@ -36,13 +43,14 @@ const useStyles = makeStyles((theme) => ({
         overflow:'auto'
     },
     code:{
-        maxHeight:"45vh"
+        maxHeight:"50vh"
+    },
+    edit:{
+        background: '#FFF',
+        color: theme.palette.text.primary,
+        fontSize:'1.2rem'
     }
 }));
-
-
-
-
 export default() => {
     const classes = useStyles();
 
@@ -51,27 +59,20 @@ export default() => {
         <div className={classes.root}>
             <Grid container className={classes.header} >
                 <Grid item xs={12}>
-                    <h2>당신의 포스트를 작성해주세요</h2>
+                <TextField className={classes.headerin} required label="포스트 제목" defaultValue="제목" />
                 </Grid>
             </Grid>
-            <Grid container direction="row"  >
-                    <Grid item className={classes.text} xs={6} >
-                    <TextField className={classes.paper}
-                        id="filled-multiline-static"
-                        label="글작성"
-                        multiline
-                        row='auto'
-                        defaultValue=""
-                        variant="filled"
-                    />
+            <Grid container className={classes.paper} direction="row">
+                    <Grid className={classes.edit} item xs={7} >
+                        <EditorConvertToHTML />
                     </Grid>
-                    <Grid item className={classes.text} xs={6}>
+                    <Grid item className={classes.text} xs={5}>
                         <Grid container direction="row"  >
                             <Grid item className={classes.code} xs={12}>
-                                <CodeWrapper props={{number:0, formal:"", prefer:"java", num:0}}/>
+                                <CodeWrapper props={{number:0, formal:"public class Test {\n\tpublic static void main(String[] args) {\n\n\t}\n}", prefer:"java", num:0}}/>
                             </Grid>
-                            <Grid item className={classes.code} xs={12}>
-                                <CodeWrapper props={{number:0, formal:"", prefer:"java", num:0}}/>
+                            <Grid item xs={12}>
+                                <div></div>
                             </Grid>
                         </Grid>
                     </Grid>

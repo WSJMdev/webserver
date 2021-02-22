@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react';
 import {TextareaAutosize} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core';
 import style from '../../css/Login.module.css';
+import CircularIntegration from './code.js';
 const useStyles = makeStyles((theme) => ({
     paper: {
         color: theme.palette.text.secondary,
@@ -41,9 +42,11 @@ export default ({props}) => {
     }
     return (
         <div>
-            <TextareaAutosize className={style.CodeArea2} rowsMin={25}  rowsMax={25} aria-label="minimum height"
+            <TextareaAutosize className={style.CodeArea3} rowsMin={28}  rowsMax={28} aria-label="minimum height"
             defaultValue="#include <iostream>" onKeyDown={handleKeyDown} onChange={handleCode}
             ref={textArea} value={code}/>
+            <CircularIntegration props={{number:number, code:code, prefer:props.prefer, num:props.number}}/>
+            
         </div>
     );
 };//<CircularIntegration props={{number:number, code:code, prefer:props.prefer, num:props.number}}/>
