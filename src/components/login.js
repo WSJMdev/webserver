@@ -6,12 +6,12 @@ import { sha256 } from 'js-sha256';
 import {useDispatch} from 'react-redux';
 import axios from 'axios';
 import {login} from '../store/state/login.js';
+import TT from './a.js';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
         margin: theme.spacing(2),
-        width: '40ch',
-        padding: '0 30px',
+        width: '35ch',
       }
     },
     btn : {
@@ -84,7 +84,6 @@ export default ({func}) => {
             alignItems="center"
             onChange={handlePassword}
             />
-
             <Button className={classes.btn} variant="contained" color="primary" onClick={handleSubmit}>
                 로그인
             </Button>
