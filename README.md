@@ -40,7 +40,7 @@ wang1@hanyang.ac.kr로 연락주세요
 Mutex를 사용하지 않고, Channel과 Channel Channel을 통해
 4개의 Worker들이 실행하는 구조로 구현되었습니다.
 
-[Site][https://github.com/javatour/runserver]
+[Site](https://github.com/javatour/runserver)
 
 
 
