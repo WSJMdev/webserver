@@ -36,6 +36,7 @@ export default ({func}) => {
     
     // @dev 서버 개발 전 테스트 용도로 token 강제 발급
     const handleSubmit = async (event) => {
+        dispatch(login(1));
         try{
             console.log({
                 email : email,
