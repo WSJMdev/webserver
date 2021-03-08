@@ -33,6 +33,8 @@ export default ({func}) => {
     const handlePassword = (e) => {
         setPassword(e.target.value);
     }
+    
+    // @dev 서버 개발 전 테스트 용도로 token 강제 발급
     const handleSubmit = async (event) => {
         try{
             console.log({
@@ -45,10 +47,11 @@ export default ({func}) => {
             });
             if(result.status === 200){
                 console.log(result.token);
-                dispatch(login(result.token));
+                dispatch(login(1));
             }
         } catch(e) {
             console.log("로그인 실패");
+            dispatch(login(1));
         }
     }
 
