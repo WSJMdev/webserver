@@ -27,7 +27,7 @@ Runable E-book and community
 현재는 1인 프로젝트로 참여하고 싶으신 분은
 wang1@hanyang.ac.kr로 연락주세요
 
-![Site](http://3.34.215.218/)
+[Site](http://3.34.215.218/)
 
 위의 링크에서 현재 개발 상황을 알 수 있습니다.
 글 포스트의 경우 모바일은 지원하지 않고,
@@ -40,7 +40,7 @@ wang1@hanyang.ac.kr로 연락주세요
 Mutex를 사용하지 않고, Channel과 Channel Channel을 통해
 4개의 Worker들이 실행하는 구조로 구현되었습니다.
 
-![Site][https://github.com/javatour/runserver]
+[Site](https://github.com/javatour/runserver)
 
 
 
