@@ -6,7 +6,6 @@ import { sha256 } from 'js-sha256';
 import {useDispatch} from 'react-redux';
 import axios from 'axios';
 import {login} from '../store/state/login.js';
-import TT from './a.js';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
@@ -36,23 +35,23 @@ export default ({func}) => {
     
     // @dev 서버 개발 전 테스트 용도로 token 강제 발급
     const handleSubmit = async (event) => {
-        dispatch(login(1));
         try{
             console.log({
                 email : email,
                 password : sha256(password)
             });
-            let result = await axios.post(process.env.REACT_APP_SERVER_HOST + "/auth", {
+            let result = await axios.post(process.env.REACT_APP_LOGINSERVER + "/token", {
                 email : email,
-                password : sha256(password)
+                password : sha256(password),
+                method : "Expired"
             });
-            if(result.status === 200){
-                console.log(result.token);
-                dispatch(login(1));
-            }
+            console.log(result);
+            if(result.status === 201){
+                dispatch(login(result));
+            } 
         } catch(e) {
-            console.log("로그인 실패");
-            dispatch(login(1));
+            dispatch(login(0));
+            alert("로그인 실패");
         }
     }
 
@@ -81,6 +80,7 @@ export default ({func}) => {
                 <TextField
             required
             id="outlined-required"
+            type="password"
             label="Password"
             defaultValue=""
             variant="outlined"

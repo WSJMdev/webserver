@@ -49,10 +49,9 @@ export default () => {
                     throw Error;
                 }
                 // axios post to /users
-                let result = await axios.post(process.env.REACT_APP_SERVER_HOST+"/users",{
+                let result = await axios.post(process.env.REACT_APP_LOGINSERVER+"/user",{
                     email:email,
                     password:sha256(passwd),
-                    language:prefer
                 })
                 //회원가입이 잘되면, 자동로그인(토큰을 받는다.)
                 if(result.status === 201){
